@@ -1,6 +1,7 @@
 # 🚀 Job Portal REST API
 
 A production-ready job portal backend API demonstrating modern Python backend development practices. This project showcases secure authentication, database design, and clean API architecture suitable for real-world applications.
+⚠️ **Project Status:** Currently **under development**. Some exciting new features are coming soon.
 
 ## 🎯 Project Highlights
 
