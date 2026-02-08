@@ -19,15 +19,16 @@ async def read_applications(db: Session = Depends(get_db)):
 @router.post("/application/", tags=["Applications"])
 def create_application(item: applications.ApplicationCreate, db: Session = Depends(get_db)):
     application = Application(
-        name=item.name,
-        description=item.description
+        job_id=item.job_id,
+        resume_url=item.resume_url,
+        cover_letter=item.cover_letter
     )
     db.add(application)
     db.commit()
     db.refresh(application)
 
 
-    return {"id": application.id, "name": item.name, "description": item.description}
+    return {"message": "Application created successfully", "Created Application": application}
 
 @router.put("/applications/{application_id}", tags=["Applications"])
 def update_application(
@@ -39,10 +40,8 @@ def update_application(
     if not application:
         raise HTTPException(status_code=404, detail="Application not found")
 
-    if item.name is not None:
-        application.name = item.name
-    if item.description is not None:
-        application.description = item.description
+    for field, value in item.dict(exclude_unset=True).items():
+        setattr(application, field, value)  
 
     db.commit()
     db.refresh(application)

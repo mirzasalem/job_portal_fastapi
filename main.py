@@ -17,13 +17,13 @@ app.include_router(jobs.router)
 app.include_router(applications.router)
 
 
-@app.get("/")
+@app.get("/" ,tags= ["Start"])
 def root():
     """Root endpoint - API health check."""
     return {
         "message": "Welcome to Job Portal API",
-        "version": "1.0.0",
-        "docs": "/docs",
+        "version": "1",
+        "Owner": "Mirza Salem",
         "status": "active"
     }
 
