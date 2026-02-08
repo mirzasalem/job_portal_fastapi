@@ -90,7 +90,7 @@ Full API documentation available at `/docs` when running.
 
 ## 👨‍💻 Author
 
-Your Name  
+Mirza Salem  
 [GitHub](https://github.com/mirzasalem/) | [LinkedIn](https://www.linkedin.com/in/mirzasalem/) | [Portfolio](https://mirzasalem.vercel.app/)
 
 ## 💼 About This Project
