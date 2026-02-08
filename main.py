@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.database import engine, Base
 from app.routers import jobs, applications, auth
+from app.models import job
 
 # Create database tables
 Base.metadata.create_all(bind=engine)

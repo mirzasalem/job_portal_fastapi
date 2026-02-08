@@ -4,6 +4,6 @@ from pydantic import BaseModel
 
 
 
-class JobCreate(BaseModel):
+class ApplicationCreate(BaseModel):
     name: str
     description: str | None = None
